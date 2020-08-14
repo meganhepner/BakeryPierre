@@ -1,0 +1,17 @@
+@using BakeryPierre.ViewModels
+@model CreateRoleViewModel
+
+@{
+  Layout = "_Layout";
+}
+
+<h2>Create New Role</h2>
+<hr />
+@using (Html.BeginForm("Register", "Account", FormMethod.Post)) //needs to change
+{
+  <label for="RoleName">Role</label>
+  <input id="Rolename" name="RoleName" type="text">
+
+
+  <input type="submit" value="Register" />
+}
