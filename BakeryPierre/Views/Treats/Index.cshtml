@@ -27,10 +27,10 @@ else
             @Html.ActionLink("Treat", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
-            @* @Html.ActionLink("Date Of Hire", "Index", new { sortOrder = ViewBag.DateSortParm }) *@
+            Available Today@* @Html.ActionLink("Date Of Hire", "Index", new { sortOrder = ViewBag.DateSortParm }) *@
         </th>
         <th>
-            Currently On Project
+            Price
         </th>
     </tr>
     
@@ -41,10 +41,10 @@ else
         @Html.ActionLink($"{treat.TreatName}", "Details", new { id = treat.TreatId})
       </td>
       <td>
-        @* @engineer.DateofHire *@
+        @treat.AvailableToday
       </td>
       <td>
-        @* @engineer.IsWorking *@
+        @treat.Price
       </td>
     </tr>
   }

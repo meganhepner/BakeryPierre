@@ -1,0 +1,45 @@
+@model BakeryPierre.Models.Treat
+
+@{
+  Layout = "_Layout";
+}
+
+<h2>Add a new Treat</h2>
+
+@using(Html.BeginForm())
+{
+  <div class="row">
+    <div class="col-md-5 column">
+      @Html.LabelFor(model => model.TreatName)<br>
+    </div>
+    <div class="col-md-5 column">
+      @Html.TextBoxFor(model => model.TreatName, new {@class="form-control", required="required"})<br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 column">
+        @Html.LabelFor(model => model.AvailableToday)<br>
+    </div>
+    <div class="col-md-5 column">
+        @Html.TextBoxFor(model => model.DateofHire, new { @type = "date"})<br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 column">
+      @Html.Label("Engineer is currently on a project")<br>
+    </div>
+    <div class="col-md-5 column">
+      @Html.CheckBoxFor(model => model.IsWorking, false)<br>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-md-5 column">
+      @Html.Label("Add Machines this Engineer is Licensed For: ")<br>
+    </div>
+    <div class="col-md-5 column">
+      @Html.DropDownList("MachineId", "Select")<br>
+      <br>    
+      <input type="submit" value="Add Engineer" /><br>
+    </div>
+  </div>
+}
