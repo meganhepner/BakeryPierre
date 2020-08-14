@@ -18,28 +18,28 @@
   </div>
   <div class="row">
     <div class="col-md-5 column">
-        @Html.LabelFor(model => model.AvailableToday)<br>
+      @Html.Label("Treat is available today :")<br>
     </div>
     <div class="col-md-5 column">
-        @Html.TextBoxFor(model => model.DateofHire, new { @type = "date"})<br>
+      @Html.CheckBoxFor(model => model.AvailableToday, true)<br>
     </div>
   </div>
   <div class="row">
     <div class="col-md-5 column">
-      @Html.Label("Engineer is currently on a project")<br>
+        @Html.LabelFor(model => model.Price)<br>
     </div>
     <div class="col-md-5 column">
-      @Html.CheckBoxFor(model => model.IsWorking, false)<br>
+        @Html.TextBoxFor(model => model.Price, new { @type = "number", step="any"})<br>
     </div>
   </div>
-    <div class="row">
+  <div class="row">
     <div class="col-md-5 column">
-      @Html.Label("Add Machines this Engineer is Licensed For: ")<br>
+      @Html.Label("Flavor profile of this treat ")<br>
     </div>
     <div class="col-md-5 column">
-      @Html.DropDownList("MachineId", "Select")<br>
+      @Html.DropDownList("FlavorId", "Select")<br>
       <br>    
-      <input type="submit" value="Add Engineer" /><br>
+      <input type="submit" value="Add Treat" /><br>
     </div>
   </div>
 }

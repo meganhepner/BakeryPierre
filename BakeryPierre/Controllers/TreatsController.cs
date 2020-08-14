@@ -65,7 +65,7 @@ namespace BakeryPierre.Controllers
       _db.Treats.Add(treat);
       if (FlavorId != 0)
       {
-        _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = treat1.TreatId });
+        _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = treat.TreatId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
