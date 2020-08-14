@@ -1,0 +1,83 @@
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 70px;
+  color: rgba(255, 255, 255, 0.76)
+  }
+  
+  body {
+    background-color:#5E6166;
+    padding: 50px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .column{
+    text-align: left;
+    font-size: 25px;
+  }
+  
+  p {
+    font-size: 30px;
+  }
+  
+  tr {
+    background-color:rgba(255, 255, 255, 0.76);
+    font-size: 30px;
+  }
+
+  li {
+    list-style-type: none;
+    font-size: 40px;
+  }
+
+  body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+  
+  #sidebar {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #37474F;
+  }
+  
+  #sidebar header {
+    background-color: #263238;
+    font-size: 30px;
+    line-height: 52px;
+    text-align: center;
+  }
+  
+  #sidebar header a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+  }
+  
+  #sidebar header a:hover {
+    color: #fff;
+  }
+  
+  #sidebar .nav a{
+    background: none;
+    border-bottom: 1px solid #455A64;
+    color: #CFD8DC;
+    font-size: 20px;
+    padding: 16px 24px;
+  }
+  
+  #sidebar .nav a:hover{
+    background: none;
+    color: #ECEFF1;
+  }
+  
+  #sidebar .nav a i{
+    margin-right: 16px;
+  }
