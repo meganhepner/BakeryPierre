@@ -1,0 +1,16 @@
+@using BakeryPierre.Models;
+@using System;
+@using System.Collections.Generic;
+@model IEnumerable<IdentityRole>;
+
+<h1>All Roles</h1>
+
+@if(Model.Any())
+{
+
+}
+else
+{
+  <p>No roles created yet</p>
+  <p>@Html.ActionLink("Create Role", "Administration", "Create Role")</p>
+}

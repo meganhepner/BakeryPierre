@@ -7,11 +7,9 @@
 
 <h2>Create New Role</h2>
 <hr />
-@using (Html.BeginForm("Register", "Account", FormMethod.Post)) //needs to change
+@using (Html.BeginForm("CreateRole", "Administration", FormMethod.Post)) //needs to change
 {
   <label for="RoleName">Role</label>
   <input id="Rolename" name="RoleName" type="text">
-
-
-  <input type="submit" value="Register" />
+  <input type="submit" value="Create Role" />
 }
