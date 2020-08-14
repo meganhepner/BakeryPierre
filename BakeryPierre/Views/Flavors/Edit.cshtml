@@ -1,0 +1,30 @@
+@model BakeryPierre.Models.Flavor
+
+@{
+  Layout = "_Layout";
+}
+
+<h2>Edit this Flavor : @Html.DisplayFor(model => model.FlavorName)</h2>
+
+@using(Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+  <div class="row">
+    <div class="col-md-5 column">
+      @Html.LabelFor(model => model.FlavorName)<br>
+    </div>
+    <div class="col-md-5 column">
+      @Html.EditorFor(model => model.FlavorName, new {@class="form-control", required="required"})<br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 column">
+      @Html.Label("Treats with this Flavor ")<br>
+    </div>
+    <div class="col-md-5 column">
+      @Html.DropDownList("TreatId", "Select")<br>
+      <br>    
+      <input type="submit" value="Add Flavor" /><br>
+    </div>
+  </div>
+}
