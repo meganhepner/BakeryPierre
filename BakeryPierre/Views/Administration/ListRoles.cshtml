@@ -1,16 +1,32 @@
 @using BakeryPierre.Models;
 @using System;
+@using Microsoft.AspNetCore.Identity
 @using System.Collections.Generic;
-@model IEnumerable<IdentityRole>;
+@model IEnumerable<IdentityRole>
 
 <h1>All Roles</h1>
 
 @if(Model.Any())
 {
-
+  <p>@Html.ActionLink("Create Role", "CreateRole")</p>
+  foreach(var role in Model)
+  {
+    <div class=card mb-3">
+      <div class="card-header">
+        Role Id : @role.Id
+      </div>
+      <div class="card-body">
+        <h5>@role.Name</h5>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  }
 }
 else
 {
   <p>No roles created yet</p>
-  <p>@Html.ActionLink("Create Role", "Administration", "Create Role")</p>
+  <p>@Html.ActionLink("Create Role", "CreateRole")</p>
 }

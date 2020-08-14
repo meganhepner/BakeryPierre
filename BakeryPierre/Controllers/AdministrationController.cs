@@ -11,10 +11,13 @@ namespace BakeryPierre.Controllers
 {
   public class AdministrationController : Controller
   {
-    private readonly RoleManager<IdentityRole> roleManager;
-    public AdministrationController(RoleManager<IdentityRole> roleManager)
+    private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly BakeryPierreContext _db;
+
+    public AdministrationController(RoleManager<IdentityRole> roleManager, BakeryPierreContext db)
     {
-      this.roleManager = roleManager;
+      _roleManager = roleManager;
+      _db = db;
     }
 
     [HttpGet]
@@ -32,10 +35,12 @@ namespace BakeryPierre.Controllers
         {
           Name = model.RoleName
         };
-        IdentityResult result = await roleManager.CreateAsync(identityRole);
+
+        IdentityResult result = await _roleManager.CreateAsync(identityRole);
+
         if(result.Succeeded)
         {
-          return RedirectToAction("Index", "Home");
+          return RedirectToAction("ListRoles", "Administration");
         }
         foreach(IdentityError error in result.Errors)
         {
@@ -48,7 +53,7 @@ namespace BakeryPierre.Controllers
     [HttpGet]
     public IActionResult ListRoles()
     {
-      var roles = roleManager.Roles;
+      var roles = _roleManager.Roles;
       return View(roles);
     }
   }
