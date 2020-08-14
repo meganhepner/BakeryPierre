@@ -23,7 +23,7 @@
         <h5>@role.Name</h5>
       </div>
       <div class="card-footer">
-        <a href="#" class="btn btn-primary">Edit</a>
+        <p>@Html.ActionLink("Edit Role", "EditRole", new {role.Id })</p>
         <a href="#" class="btn btn-danger">Delete</a>
       </div>
     </div>

@@ -12,10 +12,12 @@ namespace BakeryPierre.Controllers
   public class AdministrationController : Controller
   {
     private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly UserManager<ApplicationUser> _userManager;
     private readonly BakeryPierreContext _db;
 
-    public AdministrationController(RoleManager<IdentityRole> roleManager, BakeryPierreContext db)
+    public AdministrationController(RoleManager<IdentityRole> roleManager, BakeryPierreContext db, UserManager<ApplicationUser> userManager)
     {
+      _userManager = userManager;
       _roleManager = roleManager;
       _db = db;
     }
@@ -55,6 +57,30 @@ namespace BakeryPierre.Controllers
     {
       var roles = _roleManager.Roles;
       return View(roles);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> EditRole(string id)
+    {
+      var role = await _roleManager.FindByIdAsync(id);
+      if(role == null)
+      {
+        RedirectToAction("ListRoles");
+      }
+
+      var model = new EditRoleViewModel
+      {
+        Id = role.Id,
+        RoleName = role.Name
+      };
+      foreach(var user in _userManager.Users)
+      {
+        if(await _userManager.IsInRoleAsync(user, role.Name))
+        {
+          model.Users.Add(user.UserName);
+        }
+      }
+      return View(model);
     }
   }
 }
