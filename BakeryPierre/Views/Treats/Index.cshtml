@@ -51,4 +51,7 @@ else
   </table>
 }
 
-<p>@Html.ActionLink("Add new Treat", "Create")</p>
+@if (User.Identity.IsAuthenticated)
+{
+  <p>@Html.ActionLink("Add new Treat", "Create")</p>
+}

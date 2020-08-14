@@ -23,7 +23,7 @@ namespace BakeryPierre.Controllers
       _db = db;
     }
 
-    public ActionResult Index(string sortOrder, string searchString)
+    public async Task<ActionResult> Index(string sortOrder, string searchString)
     {
       ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
       var treats = from treat in _db.Treats select treat;
@@ -46,6 +46,8 @@ namespace BakeryPierre.Controllers
           treats = treats.OrderBy(treat => treat.TreatName);
           break;
       }
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
       return View(treats.ToList());
     }
 

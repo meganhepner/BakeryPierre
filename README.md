@@ -4,7 +4,7 @@
 
 ## <h2 align = "center"> About
 
-<p align = "center"> This is an application for a bakery. The owner can log in to create treats for his bakery and connect those treats to flavors with a many to many relationship. If a user is not logged in, they can see the backery splashpage and available treats and flavors.
+<p align = "center"> This is an application for a bakery. The owner can log in to create treats for his bakery and connect those treats to flavors with a many to many relationship. If a user is not logged in, they can see the bakery splashpage and available treats and flavors.
 
 ## **✅REQUIREMENTS**
 * Install [Git v2.62.2+](https://git-scm.com/downloads/)
