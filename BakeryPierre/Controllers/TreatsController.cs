@@ -26,6 +26,7 @@ namespace BakeryPierre.Controllers
     public async Task<ActionResult> Index(string sortOrder, string searchString)
     {
       ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+      ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "price_desc" : "";
       var treats = from treat in _db.Treats select treat;
       if (!String.IsNullOrEmpty(searchString))
       {
@@ -36,12 +37,9 @@ namespace BakeryPierre.Controllers
         case "name_desc":
           treats = treats.OrderByDescending(treat => treat.TreatName);
           break;
-        // case "Date":
-        //   engineers = engineers.OrderBy(engineer => engineer.DateofHire);
-        //   break;
-        // case "date_desc":
-        //   engineers = engineers.OrderByDescending(engineer => engineer.DateofHire);
-        //   break;
+        case "price_desc":
+          treats = treats.OrderByDescending(treat => treat.Price);
+          break;
         default:
           treats = treats.OrderBy(treat => treat.TreatName);
           break;
