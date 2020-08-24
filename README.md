@@ -1,6 +1,6 @@
 # <h1 align = "center"> Bakery Pierre
 
-## <h3 align = "center"> Entity Framework in ASP.NET MVC, Identity Authentication, Many to Many Relationships 8.7.20
+## <h3 align = "center"> Entity Framework in ASP.NET MVC, Identity Authentication, Many to Many Relationships 8.14.20
 
 ## <h2 align = "center"> About
 
@@ -14,11 +14,11 @@
 
 ## **💻SETUP**
 * to clone this content, copy the url provided by the green 'Code' button in GitHub
-* in command line use the command 'git clone (GitHub url)'
+* in command line use the command **git clone (GitHub url)**
 * open the program in a code editor
-* navigate to the BakeryPierre directory and type dotnet build in the command line to compile the code
-* remaining in the BakeryPierre directory type dotnet ef database update to create the database
-* type dotnet run in the command line to run the program
+* navigate to the BakeryPierre directory and type **dotnet build** in the command line to compile the code
+* remaining in the BakeryPierre directory type **dotnet ef database update** to create the database
+* type **dotnet run** in the command line to run the program
 
 
 ## 🔍Specs
